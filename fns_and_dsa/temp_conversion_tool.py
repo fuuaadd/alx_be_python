@@ -1,14 +1,13 @@
-# Global conversion factors
+
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Ensuring this exact line is present
-FAHRENHEIT_OFFSET = 32
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5 
+
 
 def convert_to_celsius(fahrenheit):
-    return (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
-
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 def main():
     temperature_input = input("Enter the temperature to convert: ")
     if not temperature_input.replace('.', '', 1).isdigit() and not (temperature_input.startswith('-') and temperature_input[1:].replace('.', '', 1).isdigit()):
